@@ -1,0 +1,171 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * dwarkatemple.in design system
+ * Temple maroon + saffron on warm cream. All colors in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --font-display: "Marcellus", Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: oklch(1 0 0);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-soft: 0 1px 2px oklch(0.3 0.06 40 / 0.06), 0 8px 24px -12px oklch(0.3 0.06 40 / 0.18);
+  --shadow-lift: 0 12px 40px -16px oklch(0.3 0.06 40 / 0.3);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* warm cream #FFF8ED */
+  --background: oklch(0.984 0.017 84);
+  /* charcoal #252525 */
+  --foreground: oklch(0.245 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.245 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.245 0 0);
+  /* temple maroon #741F2B */
+  --primary: oklch(0.386 0.117 19.5);
+  --primary-foreground: oklch(0.985 0.015 84);
+  /* saffron #E68A16 */
+  --secondary: oklch(0.72 0.152 62);
+  --secondary-foreground: oklch(0.245 0 0);
+  --muted: oklch(0.945 0.024 80);
+  --muted-foreground: oklch(0.48 0.03 45);
+  /* sandstone #E8D8C1 */
+  --accent: oklch(0.885 0.033 78);
+  --accent-foreground: oklch(0.386 0.117 19.5);
+  --destructive: oklch(0.55 0.21 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.885 0.028 78);
+  --input: oklch(0.885 0.028 78);
+  --ring: oklch(0.72 0.152 62);
+  --sand: oklch(0.885 0.033 78);
+  --gold: oklch(0.78 0.11 78);
+  --whatsapp: oklch(0.6 0.15 150);
+  --gradient-hero: linear-gradient(
+    to top,
+    oklch(0.28 0.08 22 / 0.92) 0%,
+    oklch(0.3 0.09 25 / 0.6) 45%,
+    oklch(0.35 0.08 30 / 0.25) 100%
+  );
+  --gradient-saffron: linear-gradient(135deg, oklch(0.72 0.152 62), oklch(0.66 0.16 40));
+  --sidebar: oklch(0.984 0.017 84);
+  --sidebar-foreground: oklch(0.245 0 0);
+  --sidebar-primary: oklch(0.386 0.117 19.5);
+  --sidebar-primary-foreground: oklch(0.985 0.015 84);
+  --sidebar-accent: oklch(0.945 0.024 80);
+  --sidebar-accent-foreground: oklch(0.386 0.117 19.5);
+  --sidebar-border: oklch(0.885 0.028 78);
+  --sidebar-ring: oklch(0.72 0.152 62);
+}
+
+.dark {
+  --background: oklch(0.2 0.02 30);
+  --foreground: oklch(0.96 0.012 84);
+  --card: oklch(0.26 0.03 28);
+  --card-foreground: oklch(0.96 0.012 84);
+  --popover: oklch(0.26 0.03 28);
+  --popover-foreground: oklch(0.96 0.012 84);
+  --primary: oklch(0.72 0.152 62);
+  --primary-foreground: oklch(0.22 0.03 28);
+  --secondary: oklch(0.4 0.1 20);
+  --secondary-foreground: oklch(0.96 0.012 84);
+  --muted: oklch(0.3 0.03 30);
+  --muted-foreground: oklch(0.75 0.02 60);
+  --accent: oklch(0.36 0.06 40);
+  --accent-foreground: oklch(0.96 0.012 84);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.72 0.152 62);
+  --sand: oklch(0.36 0.06 40);
+  --gold: oklch(0.7 0.1 78);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility surface-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+@utility hero-overlay {
+  background-image: var(--gradient-hero);
+}
+
+@utility saffron-rule {
+  height: 3px;
+  width: 3.5rem;
+  border-radius: 999px;
+  background-image: var(--gradient-saffron);
+}
