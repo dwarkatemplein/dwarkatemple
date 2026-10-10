@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, Phone, X, MessageSquare, ShieldCheck, MapPin } from "lucide-react";
+import { Menu, Phone, X, MessageSquare, ShieldCheck } from "lucide-react";
 import { site, telLink, whatsappLink } from "@/lib/site";
 import { buttonStyles } from "./ui";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-50 shadow-sm">
       {/* Top Utility Announcement Bar */}
       <div className="bg-primary text-primary-foreground border-b border-amber-500/20 py-1.5 text-xs">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 font-medium tracking-wide min-w-0">
             <span className="inline-flex items-center gap-1 shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] sm:text-[11px] text-amber-200">
               <ShieldCheck className="h-3 w-3" /> Verified Assistance
@@ -56,35 +56,35 @@ export function Header() {
 
       {/* Main Navigation Bar */}
       <div className="border-b border-border/80 bg-background/95 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-1.5 sm:gap-3 px-3 sm:px-6 lg:px-8">
-          {/* Brand Logo */}
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
+          {/* Brand Logo - shrink-0 ensures text never shrinks to 0 on desktop */}
           <Link
             to="/"
-            className="flex min-w-0 shrink items-center gap-2 sm:gap-3 transition-opacity hover:opacity-90"
+            className="flex shrink-0 items-center gap-2.5 sm:gap-3 transition-opacity hover:opacity-90"
             onClick={() => setOpen(false)}
           >
-            <span className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md ring-2 ring-amber-500/30">
+            <span className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md ring-2 ring-amber-500/30">
               <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden fill="currentColor">
                 <path d="M12 2l2.2 4.2L12 8 9.8 6.2 12 2zm0 7.2l4 3.4V22h-3v-5h-2v5H7v-9.4l5-3.4z" />
               </svg>
             </span>
-            <span className="leading-tight min-w-0">
-              <span className="block font-[family-name:var(--font-display)] text-base sm:text-xl font-bold tracking-tight text-primary truncate">
+            <span className="leading-tight shrink-0">
+              <span className="block font-[family-name:var(--font-display)] text-lg sm:text-xl font-bold tracking-tight text-primary">
                 Dwarka Temple
               </span>
-              <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.22em] font-medium text-muted-foreground truncate">
+              <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.22em] font-medium text-muted-foreground">
                 Travel Assistance
               </span>
             </span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-0.5 xl:gap-1.5 lg:flex">
+          <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex shrink min-w-0">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium text-foreground/80 transition-all duration-150 hover:bg-primary/5 hover:text-primary xl:px-3 xl:text-sm"
+                className="whitespace-nowrap rounded-lg px-2 py-1.5 text-xs xl:px-3 xl:py-2 xl:text-sm font-medium text-foreground/80 transition-all duration-150 hover:bg-primary/5 hover:text-primary"
                 activeProps={{
                   className:
                     "bg-primary/10 text-primary font-semibold shadow-2xs border-b-2 border-primary",
@@ -97,10 +97,10 @@ export function Header() {
           </nav>
 
           {/* Header Action Buttons */}
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
               href={telLink()}
-              className="hidden items-center gap-2 whitespace-nowrap rounded-lg border border-primary/20 bg-primary/5 px-3.5 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 xl:flex"
+              className="hidden items-center gap-2 whitespace-nowrap rounded-lg border border-primary/20 bg-primary/5 px-3.5 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 2xl:flex"
             >
               <Phone className="h-3.5 w-3.5 text-primary" />
               <span>{site.phoneDisplay}</span>
@@ -110,18 +110,17 @@ export function Header() {
               href={whatsappLink("Hello, I would like help planning my Dwarka trip.")}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[#25D366] px-2.5 py-2 text-xs font-bold text-white shadow-md transition-all hover:bg-[#20ba5a] hover:shadow-lg focus:ring-2 focus:ring-[#25D366]/40 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
+              className="hidden sm:inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[#25D366] px-4 py-2 text-xs font-bold text-white shadow-md transition-all hover:bg-[#20ba5a] hover:shadow-lg focus:ring-2 focus:ring-[#25D366]/40 sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <MessageSquare className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-current shrink-0" />
-              <span className="hidden min-[360px]:inline">WhatsApp Us</span>
-              <span className="inline min-[360px]:hidden">WhatsApp</span>
+              <MessageSquare className="h-4 w-4 fill-current shrink-0" />
+              <span>WhatsApp Us</span>
             </a>
 
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-2xs transition hover:bg-muted lg:hidden"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-2xs transition hover:bg-muted lg:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -157,6 +156,15 @@ export function Header() {
               >
                 <Phone className="h-4 w-4" />
                 Call {site.phoneDisplay}
+              </a>
+              <a
+                href={whatsappLink("Hello, I need help planning my trip.")}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-2.5 text-sm font-bold text-white shadow-sm"
+              >
+                <MessageSquare className="h-4 w-4 fill-current" />
+                WhatsApp Support
               </a>
               <Link
                 to="/taxi-service"
