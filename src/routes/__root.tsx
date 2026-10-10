@@ -101,6 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "robots",
         content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
       },
+      { name: "theme-color", content: "#741F2B" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Dwarka Temple Travel Assistance" },
       { property: "og:locale", content: "en_IN" },
@@ -122,6 +123,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "canonical", href: "https://dwarkatemple.in/" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -141,32 +143,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    name: "Dwarka Temple Travel Assistance",
-    url: "https://dwarkatemple.in",
-    logo: "https://dwarkatemple.in/favicon.ico",
-    telephone: "+918980200950",
-    priceRange: "₹₹",
-    description:
-      "Travel assistance for Dwarka and Gujarat pilgrimage journeys: tour planning, private taxis, hotel and dharamshala assistance, and local sightseeing.",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Dwarka",
-      addressRegion: "Gujarat",
-      postalCode: "361335",
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 22.2442,
-      longitude: 68.9685,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "06:00",
-      closes: "22:00",
-    },
+    "@graph": [
+      {
+        "@type": "TravelAgency",
+        "@id": "https://dwarkatemple.in/#organization",
+        name: "Dwarka Temple Travel Assistance",
+        url: "https://dwarkatemple.in",
+        logo: "https://dwarkatemple.in/favicon.ico",
+        telephone: "+918980200950",
+        priceRange: "₹₹",
+        description:
+          "Travel assistance for Dwarka and Gujarat pilgrimage journeys: tour planning, private taxis, hotel and dharamshala assistance, and local sightseeing.",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Dwarka",
+          addressRegion: "Gujarat",
+          postalCode: "361335",
+          addressCountry: "IN",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 22.2442,
+          longitude: 68.9685,
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "06:00",
+          closes: "22:00",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dwarkatemple.in/#website",
+        url: "https://dwarkatemple.in",
+        name: "Dwarka Temple Travel Assistance",
+        publisher: {
+          "@id": "https://dwarkatemple.in/#organization",
+        },
+        inLanguage: "en-IN",
+      },
+    ],
   };
 
   return (

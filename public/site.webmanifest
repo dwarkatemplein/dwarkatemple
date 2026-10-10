@@ -1,0 +1,16 @@
+{
+  "name": "Dwarka Temple Travel Assistance",
+  "short_name": "Dwarka Temple",
+  "description": "Pilgrimage taxis, hotel booking & customized Gujarat tour packages for Dwarka.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8ED",
+  "theme_color": "#741F2B",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
