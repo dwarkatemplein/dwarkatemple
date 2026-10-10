@@ -23,19 +23,19 @@ export function Header() {
     <header className="sticky top-0 z-50 shadow-sm">
       {/* Top Utility Announcement Bar */}
       <div className="bg-primary text-primary-foreground border-b border-amber-500/20 py-1.5 text-xs">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 font-medium tracking-wide">
-            <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/20 px-2 py-0.5 text-[11px] text-amber-200">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 font-medium tracking-wide min-w-0">
+            <span className="inline-flex items-center gap-1 shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] sm:text-[11px] text-amber-200">
               <ShieldCheck className="h-3 w-3" /> Verified Assistance
             </span>
-            <span className="hidden sm:inline-block text-primary-foreground/90">
+            <span className="hidden sm:inline-block text-primary-foreground/90 truncate">
               Pilgrimage Taxis, Hotel Booking & Customized Gujarat Tour Packages
             </span>
           </div>
-          <div className="flex items-center gap-4 text-primary-foreground/90">
+          <div className="flex items-center gap-3 sm:gap-4 text-primary-foreground/90 shrink-0">
             <a
               href={telLink()}
-              className="flex items-center gap-1.5 hover:text-amber-200 transition-colors whitespace-nowrap font-medium"
+              className="flex items-center gap-1.5 hover:text-amber-200 transition-colors whitespace-nowrap font-medium text-[11px] sm:text-xs"
             >
               <Phone className="h-3.5 w-3.5 text-amber-300" />
               <span>{site.phoneDisplay}</span>
@@ -56,23 +56,23 @@ export function Header() {
 
       {/* Main Navigation Bar */}
       <div className="border-b border-border/80 bg-background/95 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-1.5 sm:gap-3 px-3 sm:px-6 lg:px-8">
           {/* Brand Logo */}
           <Link
             to="/"
-            className="flex shrink-0 items-center gap-3 transition-opacity hover:opacity-90"
+            className="flex min-w-0 shrink items-center gap-2 sm:gap-3 transition-opacity hover:opacity-90"
             onClick={() => setOpen(false)}
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md ring-2 ring-amber-500/30">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden fill="currentColor">
+            <span className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md ring-2 ring-amber-500/30">
+              <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden fill="currentColor">
                 <path d="M12 2l2.2 4.2L12 8 9.8 6.2 12 2zm0 7.2l4 3.4V22h-3v-5h-2v5H7v-9.4l5-3.4z" />
               </svg>
             </span>
-            <span className="leading-tight shrink-0">
-              <span className="block font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-primary">
+            <span className="leading-tight min-w-0">
+              <span className="block font-[family-name:var(--font-display)] text-base sm:text-xl font-bold tracking-tight text-primary truncate">
                 Dwarka Temple
               </span>
-              <span className="block text-[10px] uppercase tracking-[0.22em] font-medium text-muted-foreground">
+              <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.22em] font-medium text-muted-foreground truncate">
                 Travel Assistance
               </span>
             </span>
@@ -97,7 +97,7 @@ export function Header() {
           </nav>
 
           {/* Header Action Buttons */}
-          <div className="flex shrink-0 items-center gap-3">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <a
               href={telLink()}
               className="hidden items-center gap-2 whitespace-nowrap rounded-lg border border-primary/20 bg-primary/5 px-3.5 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 xl:flex"
@@ -110,17 +110,18 @@ export function Header() {
               href={whatsappLink("Hello, I would like help planning my Dwarka trip.")}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[#25D366] px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:bg-[#20ba5a] hover:shadow-lg focus:ring-2 focus:ring-[#25D366]/40 sm:px-5 sm:text-sm"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[#25D366] px-2.5 py-2 text-xs font-bold text-white shadow-md transition-all hover:bg-[#20ba5a] hover:shadow-lg focus:ring-2 focus:ring-[#25D366]/40 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <MessageSquare className="h-4 w-4 fill-current" />
-              <span>WhatsApp Us</span>
+              <MessageSquare className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-current shrink-0" />
+              <span className="hidden min-[360px]:inline">WhatsApp Us</span>
+              <span className="inline min-[360px]:hidden">WhatsApp</span>
             </a>
 
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-2xs transition hover:bg-muted lg:hidden"
+              className="inline-flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-2xs transition hover:bg-muted lg:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>

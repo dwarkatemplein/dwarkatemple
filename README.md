@@ -1,26 +1,21 @@
-# Pixel Perfect
+# dwarkatemple.in
 
-Implement exactly the screenshot and nothing else
+Official Travel Assistance Website for Dwarka & Gujarat Pilgrimage Journeys.
 
-This project was built with [Lovable](https://lovable.dev).
+**Website**: https://dwarkatemple.in
 
-**Live app**: https://pixel-perfect-snapshot-7353.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d2c136ac-2917-444a-9661-e11932d4f81d).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Services Offered
+- **Tour Packages**: Dwarka, Somnath, Nageshwar, Bet Dwarka, and Gujarat pilgrimage packages.
+- **Taxi Services**: Clean, comfortable cabs with experienced local drivers for pickup, drop & sightseeing.
+- **Hotel & Dharamshala Booking**: Verified stays close to Dwarkadhish Temple.
+- **Travel Guide**: Comprehensive itinerary, temple timings, and local transportation info.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js and npm / bun.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
