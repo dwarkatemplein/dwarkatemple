@@ -99,14 +99,6 @@ export function Header() {
           {/* Header Action Buttons */}
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
-              href={telLink()}
-              className="hidden items-center gap-2 whitespace-nowrap rounded-lg border border-primary/20 bg-primary/5 px-3.5 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 2xl:flex"
-            >
-              <Phone className="h-3.5 w-3.5 text-primary" />
-              <span>{site.phoneDisplay}</span>
-            </a>
-
-            <a
               href={whatsappLink("Hello, I would like help planning my Dwarka trip.")}
               target="_blank"
               rel="noreferrer"
